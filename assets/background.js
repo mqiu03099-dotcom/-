@@ -13,9 +13,13 @@
   if (!ctx) return;
 
   var sky = document.body.getAttribute('data-theme') === 'sky';
-  var colors = sky
-    ? ['#5f9ed6', '#7db7e8', '#a4cff0', '#c6e2f8']
-    : ['#f4a3bd', '#c2aff0', '#8fc9f7', '#9adfc6', '#f2d38b'];
+  var baseShape = document.body.getAttribute('data-shape') || (sky ? 'star' : 'heart');
+  var customColors = getComputedStyle(document.body).getPropertyValue('--particles').trim();
+  var colors = customColors
+    ? customColors.split(',').map(function (color) { return color.trim(); }).filter(Boolean)
+    : sky
+      ? ['#5f9ed6', '#7db7e8', '#a4cff0', '#c6e2f8']
+      : ['#f4a3bd', '#c2aff0', '#8fc9f7', '#9adfc6', '#f2d38b'];
   var items = [];
   var width = 0;
   var height = 0;
@@ -33,18 +37,18 @@
   }
 
   function makeItem(initial) {
-    var shape = Math.random() > 0.3 ? (sky ? 'star' : 'heart') : 'dot';
+    var shape = Math.random() > 0.3 ? baseShape : 'dot';
     return {
       shape: shape,
       x: rand(0, width),
       y: initial ? rand(0, height) : height + rand(20, 120),
-      size: shape === 'dot' ? rand(3, 7) : sky ? rand(8, 18) : rand(9, 22),
+      size: shape === 'dot' ? rand(3, 7) : baseShape === 'star' ? rand(8, 18) : rand(9, 22),
       speed: shape === 'dot' ? rand(3, 9) : rand(7, 17),
       sway: rand(0.25, 0.6),
       phase: rand(0, Math.PI * 2),
       rotation: rand(-0.35, 0.35),
-      spin: sky ? rand(-0.04, 0.04) : rand(-0.12, 0.12),
-      alpha: shape === 'dot' ? rand(0.2, 0.38) : sky ? rand(0.22, 0.42) : rand(0.18, 0.34),
+      spin: baseShape === 'star' ? rand(-0.04, 0.04) : rand(-0.12, 0.12),
+      alpha: shape === 'dot' ? rand(0.2, 0.38) : baseShape === 'star' ? rand(0.22, 0.42) : rand(0.18, 0.34),
       color: colors[Math.floor(Math.random() * colors.length)]
     };
   }

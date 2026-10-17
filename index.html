@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#f4faff">
     <title>趣味测试｜测试目录</title>
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="assets/site.css?v=theme2">
+    <link rel="stylesheet" href="assets/site.css?v=quiz1">
     <script src="assets/vendor/tailwind.js"></script>
     <script>
       tailwind.config = {
@@ -25,42 +25,130 @@
   <body class="flex min-h-dvh flex-col text-[#3f5b78]" data-theme="sky">
     <div class="veil" aria-hidden="true"></div>
 
-    <main class="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-5 py-8 sm:px-8 sm:py-14 lg:py-20">
+    <main class="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 py-8 sm:px-8 sm:py-14 lg:py-20">
       <header class="text-center">
         <p class="text-[11px] tracking-[0.3em] text-[#7890a8]">FUN QUIZ · 趣味测试</p>
         <h1 class="mt-4 text-[clamp(28px,5vw,46px)] font-semibold leading-tight">今天，想测点什么？</h1>
-        <p class="mt-3 text-sm text-[#7890a8] sm:text-base">挑一个轻松的小测试，跟着第一感觉走就好。</p>
+        <p class="mt-3 text-sm text-[#7890a8] sm:text-base">13 个爱情小测试，挑一个跟着第一感觉开始。</p>
       </header>
 
-      <section class="mt-7 grid gap-3.5 sm:mt-12 sm:grid-cols-2 sm:gap-4 md:grid-cols-3" aria-label="测试目录">
-        <a href="love.html" class="group flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[#dcecff]/55 p-5 backdrop-blur-xl transition-colors hover:bg-[#dcecff]/80 sm:min-h-[216px] sm:p-7">
+      <section class="mt-7 grid gap-3.5 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3" aria-label="测试目录">
+        <a href="love.html" style="--accent:#d97f9c;--accent-deep:#b45d76;--card:rgba(251,227,235,.55)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
           <div>
-            <p class="text-[11px] tracking-[0.2em] text-[#5a8dba]">LOVE · 30 题</p>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">LOVE · 30 题</p>
             <h2 class="mt-3 text-2xl font-semibold">TA 喜欢我吗？</h2>
             <p class="mt-2 text-sm leading-6 text-[#6f8199]">从 30 个日常细节里，看看 TA 藏了多少心意。</p>
           </div>
-          <div class="mt-6 flex items-end justify-between">
-            <span class="text-xs text-[#7d93aa]">约 3 分钟 · 六维雷达</span>
-          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 3 分钟 · 六维雷达</span>
         </a>
 
-        <div class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-white/40 p-5 backdrop-blur-xl sm:min-h-[216px] sm:p-7">
+        <a href="crush.html" style="--accent:#e58aa4;--accent-deep:#b45d76;--card:rgba(247,208,222,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
           <div>
-            <p class="text-[11px] tracking-[0.2em] text-[#8ba3ba]">COMING SOON</p>
-            <h2 class="mt-3 text-xl font-semibold text-[#3f5b78]/55">下一个测试</h2>
-            <p class="mt-2 text-sm leading-6 text-[#7890a8]/80">正在准备中，敬请期待。</p>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">CRUSH · 18 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">暗恋信号识别</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">从主动、分享到身体距离，读懂 TA 的暗恋信号。</p>
           </div>
-          <span class="mt-6 text-xs text-[#8ba3ba]/70">筹备中</span>
-        </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 六维雷达</span>
+        </a>
 
-        <div class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-white/40 p-5 backdrop-blur-xl sm:min-h-[216px] sm:p-7">
+        <a href="match.html" style="--accent:#6fa9d8;--accent-deep:#3f6f9c;--card:rgba(205,231,247,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
           <div>
-            <p class="text-[11px] tracking-[0.2em] text-[#8ba3ba]">COMING SOON</p>
-            <h2 class="mt-3 text-xl font-semibold text-[#3f5b78]/55">更多玩法</h2>
-            <p class="mt-2 text-sm leading-6 text-[#7890a8]/80">新测试会陆续放到这里。</p>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">MATCH · 18 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">恋爱契合度</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">三观、沟通、边界感，看看你们到底合不合拍。</p>
           </div>
-          <span class="mt-6 text-xs text-[#8ba3ba]/70">筹备中</span>
-        </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 六维雷达</span>
+        </a>
+
+        <a href="flirt.html" style="--accent:#f08a72;--accent-deep:#b95a45;--card:rgba(255,214,200,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">FLIRT · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">暧昧期进度</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">你们现在是在试探、升温，还是只差一句挑明？</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 阶段进度</span>
+        </a>
+
+        <a href="ex.html" style="--accent:#8f87ad;--accent-deep:#625a80;--card:rgba(219,214,232,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">EX · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">分手后复合概率</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">还有余温，还是已经翻篇？看清复合的可能性。</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 倾向指数</span>
+        </a>
+
+        <a href="ideal.html" style="--accent:#6d9fc9;--accent-deep:#446f96;--card:rgba(210,231,247,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">IDEAL · 18 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">理想型画像</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">你会被什么样的人吸引？拼出你的理想型关键词。</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 关键词</span>
+        </a>
+
+        <a href="brain.html" style="--accent:#e2627f;--accent-deep:#a93e58;--card:rgba(250,205,216,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">BRAIN · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">恋爱脑指数</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">一谈恋爱，你还有多少理智？测测你的上头程度。</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 指数等级</span>
+        </a>
+
+        <a href="talk.html" style="--accent:#4fae9b;--accent-deep:#2f7d6e;--card:rgba(202,238,229,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">TALK · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">恋爱沟通风格</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">直球、回避、讨好、冷静还是情绪型？</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 类型结果</span>
+        </a>
+
+        <a href="attach.html" style="--accent:#c09a6b;--accent-deep:#8a6a43;--card:rgba(240,222,200,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">ATTACH · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">恋爱依恋类型</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">安全、焦虑、回避还是混乱？看见你的亲密模式。</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 类型结果</span>
+        </a>
+
+        <a href="give.html" style="--accent:#e69a54;--accent-deep:#b06f30;--card:rgba(250,224,196,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">GIVE · 18 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">恋爱付出方式</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">时间、情绪、金钱、照顾，你在爱里怎么付出？</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 六维雷达</span>
+        </a>
+
+        <a href="date.html" style="--accent:#a8a94f;--accent-deep:#777a2f;--card:rgba(238,238,190,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">DATE · 18 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">约会方式测试</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">安静独处、热闹体验还是居家日常？找到合拍路线。</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 场景标签</span>
+        </a>
+
+        <a href="fight.html" style="--accent:#7c8fb3;--accent-deep:#536788;--card:rgba(214,222,236,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">FIGHT · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">吵架模式</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">冷战、爆发、讲理、逃避还是修复型？</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 类型结果</span>
+        </a>
+
+        <a href="depend.html" style="--accent:#d47aa0;--accent-deep:#9e4e70;--card:rgba(247,211,226,.5)" class="flex min-h-[172px] flex-col justify-between rounded-[28px] border border-white/60 bg-[var(--card)] p-5 backdrop-blur-xl transition-colors hover:bg-white/70 sm:min-h-[216px] sm:p-7">
+          <div>
+            <p class="text-[11px] tracking-[0.2em] text-[var(--accent-deep)]">DEPEND · 20 题</p>
+            <h2 class="mt-3 text-2xl font-semibold">谁更离不开谁</h2>
+            <p class="mt-2 text-sm leading-6 text-[#6f8199]">测测这段关系里的依赖天平，看看谁投入更多。</p>
+          </div>
+          <span class="mt-6 text-xs text-[#7d93aa]">约 2 分钟 · 双人天平</span>
+        </a>
       </section>
     </main>
 
@@ -69,6 +157,6 @@
       <span class="mx-2 inline-block h-1 w-1 rounded-full bg-[#7d93aa] align-middle" aria-hidden="true"></span>
       <a class="underline decoration-dotted underline-offset-4 transition-colors hover:text-[#2f4d6b]" href="mailto:2939561428@qq.com">2939561428@qq.com</a>
     </footer>
-    <script src="assets/background.js?v=theme2"></script>
+    <script src="assets/background.js?v=theme3"></script>
   </body>
 </html>
