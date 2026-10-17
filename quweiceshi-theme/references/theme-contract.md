@@ -46,7 +46,7 @@
 - `#result` 内的 `#visual`、`#score`、`#resultTitle`、`#resultText`、`#resultExtra`、`#copy`、`#restart`。
 - 测试页内不要加 `href="index.html"`、返回目录或返回首页。
 
-页面高度固定为 `100dvh`，`body` 不滚动；`main` 是唯一纵向滚动容器（`min-height: 0; overflow-y: auto`），footer 固定在底部；切换题目、入口页或结果页时把 `main` 滚回顶部，不要用 `window.scrollTo`。
+页面外层用 `min-height: 100dvh` 的纵向 flex 布局，由浏览器负责整页滚动；`main` 保持 `flex: 1 0 auto`（内容长时自然撑开），footer 用 `margin-top: auto`，内容不满贴底、内容超出跟随文档流；隐藏滚动条但保留滚动能力；切换题目、入口页或结果页时用 `window.scrollTo({ top: 0 })` 回顶。
 
 ## 题库配置
 

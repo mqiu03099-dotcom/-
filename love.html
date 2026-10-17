@@ -134,7 +134,7 @@
         [gateScreen, quizScreen, resultScreen].forEach(function (item) {
           item.hidden = item !== screen;
         });
-        document.body.scrollTo({ top: 0 });
+        window.scrollTo({ top: 0 });
       }
 
       function renderQuestion() {
@@ -151,7 +151,7 @@
         });
         prevBtn.disabled = index === 0;
         if (optionsBox) optionsBox.classList.add('is-resetting');
-        document.body.scrollTo({ top: 0 });
+        window.scrollTo({ top: 0 });
       }
 
       function renderRadar(values, color) {
