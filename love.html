@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#fdf8f3">
+    <title>趣味测试｜TA 喜欢我吗</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="assets/site.css?v=theme2">
+    <script src="assets/vendor/tailwind.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#5b5470',
+              muted: '#8d85a1',
+              blush: '#fbe3eb'
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="flex min-h-dvh flex-col text-ink" data-theme="macaron">
+    <div class="veil" aria-hidden="true"></div>
+
+    <main class="mx-auto flex w-full max-w-[680px] flex-1 flex-col px-5 pb-6 pt-6 sm:px-8 sm:pb-8 sm:pt-8">
+      <div class="my-auto w-full py-6 sm:py-10">
+        <section id="gate" class="w-full text-center">
+          <p class="text-[11px] tracking-[0.28em] text-muted"><span class="text-[#e38ba8]">♡</span> 专属小测试</p>
+          <h1 class="mt-4 text-[clamp(30px,6vw,44px)] font-semibold leading-tight">TA <span class="text-[#d97f9c]">喜欢</span>我吗？</h1>
+          <p class="mt-3 text-sm text-muted sm:text-base">30 个日常细节，读懂 TA 的心意。</p>
+
+          <form id="gateForm" class="mx-auto mt-8 w-full max-w-[420px]">
+            <div class="flex w-full flex-col gap-3 sm:flex-row">
+              <label for="password" class="sr-only">访问暗号</label>
+              <input id="password" type="password" inputmode="numeric" maxlength="4" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" required placeholder="请输入暗号" class="h-14 w-full min-w-0 rounded-full border-2 border-white/70 bg-white/50 px-5 text-base text-ink backdrop-blur-md transition-colors placeholder:text-muted/70 focus:border-[#eaaebf] focus:bg-white/75 focus:outline-none sm:h-12 sm:flex-1">
+              <button type="submit" class="h-14 w-full shrink-0 rounded-full border-2 border-white/60 bg-[#f8ccdb]/85 px-7 text-[15px] font-semibold text-ink backdrop-blur-md transition-colors hover:bg-[#f6bfd2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#eaaebf] sm:h-12 sm:w-auto">开始测试</button>
+            </div>
+            <p id="gateHint" class="mt-3 min-h-5 text-[13px] leading-5 text-muted" aria-live="polite">需要输入暗号才能进入开始测试</p>
+          </form>
+        </section>
+
+        <section id="quiz" class="w-full" hidden>
+          <div class="flex items-center justify-between text-[13px] text-muted">
+            <span id="progress">第 1 / 30 题</span>
+            <span class="hidden sm:inline">凭第一感觉选择</span>
+          </div>
+          <div class="mt-2.5 h-2 overflow-hidden rounded-full bg-[#efe9f2]">
+            <span id="barFill" class="block h-full w-0 rounded-full bg-[#f3aec7] transition-[width] duration-300"></span>
+          </div>
+          <h2 id="question" class="mt-7 min-h-[3.2em] text-[clamp(19px,3.6vw,24px)] font-medium leading-relaxed"></h2>
+          <div class="mt-5 grid gap-2.5">
+            <button type="button" data-option="0" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[#f0b7c9] hover:bg-white/75 active:border-[#e79bb3] active:bg-[#fde7ee]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#eaaebf] aria-pressed:border-[#efa9bf] aria-pressed:bg-[#fde7ee]/80"></button>
+            <button type="button" data-option="1" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[#f0b7c9] hover:bg-white/75 active:border-[#e79bb3] active:bg-[#fde7ee]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#eaaebf] aria-pressed:border-[#efa9bf] aria-pressed:bg-[#fde7ee]/80"></button>
+            <button type="button" data-option="2" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[#f0b7c9] hover:bg-white/75 active:border-[#e79bb3] active:bg-[#fde7ee]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#eaaebf] aria-pressed:border-[#efa9bf] aria-pressed:bg-[#fde7ee]/80"></button>
+            <button type="button" data-option="3" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[#f0b7c9] hover:bg-white/75 active:border-[#e79bb3] active:bg-[#fde7ee]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#eaaebf] aria-pressed:border-[#efa9bf] aria-pressed:bg-[#fde7ee]/80"></button>
+          </div>
+          <div class="mt-3">
+            <button id="prev" type="button" class="inline-flex items-center gap-1.5 py-2 text-xs font-bold text-muted transition-colors hover:text-ink disabled:opacity-0">
+              <svg class="h-3 w-3 rotate-180 text-[#d97f9c]" viewBox="0 0 1024 1024" aria-hidden="true">
+                <path fill="currentColor" d="M315.2 912.4c-18 0-36-7.6-48.6-22.4-23-26.8-19.9-67.2 6.9-90.2l336-288-336-288c-26.8-23-29.9-63.4-6.9-90.2 23-26.8 63.4-29.9 90.2-6.9l392.7 336.6c14.2 12.2 22.3 29.9 22.3 48.6s-8.2 36.4-22.3 48.6L356.8 897c-12 10.3-26.9 15.4-41.6 15.4z"/>
+              </svg>
+              上一题
+            </button>
+          </div>
+        </section>
+
+        <section id="result" class="w-full text-center" hidden>
+          <div id="radar" class="mx-auto h-[280px] w-full sm:h-[330px]" role="img" aria-label="六维心动雷达图"></div>
+          <p id="score" class="text-[13px] tracking-wide text-muted"></p>
+          <h2 id="resultTitle" class="mt-2 text-[clamp(24px,4.6vw,30px)] font-semibold"></h2>
+          <p id="resultText" class="mx-auto mt-4 max-w-[560px] text-left text-[14px] leading-7 text-[#5e5670] sm:text-[15px]"></p>
+          <div class="mt-6 flex gap-2.5">
+            <button id="copy" type="button" class="h-12 flex-1 rounded-full bg-[#d9f3ea] text-sm font-semibold text-ink transition-colors hover:bg-[#ccefe3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#bfd8f2]">复制结果</button>
+            <button id="restart" type="button" class="h-12 flex-1 rounded-full bg-[#e9defb] text-sm font-semibold text-ink transition-colors hover:bg-[#dfd2f7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#bfd8f2]">再测一次</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="w-full px-5 pb-[calc(14px+env(safe-area-inset-bottom))] pt-2 text-center text-xs text-muted">
+      <span>由潇洒哥提供技术支持</span>
+      <span class="mx-2 inline-block h-1 w-1 rounded-full bg-[#c98aa0] align-middle" aria-hidden="true"></span>
+      <a class="underline decoration-dotted underline-offset-4 transition-colors hover:text-ink" href="mailto:2939561428@qq.com">2939561428@qq.com</a>
+    </footer>
+
+    <script src="assets/vendor/echarts.min.js"></script>
+    <script src="assets/love-questions.js?v=7700"></script>
+    <script>
+      const gateScreen = document.getElementById('gate');
+      const quizScreen = document.getElementById('quiz');
+      const resultScreen = document.getElementById('result');
+      const gateForm = document.getElementById('gateForm');
+      const passwordInput = document.getElementById('password');
+      const gateHint = document.getElementById('gateHint');
+      const progressLabel = document.getElementById('progress');
+      const barFill = document.getElementById('barFill');
+      const questionTitle = document.getElementById('question');
+      const optionButtons = Array.from(document.querySelectorAll('[data-option]'));
+      const prevBtn = document.getElementById('prev');
+      const radarEl = document.getElementById('radar');
+      const scoreLabel = document.getElementById('score');
+      const resultTitle = document.getElementById('resultTitle');
+      const resultText = document.getElementById('resultText');
+
+      let index = 0;
+      let answers = new Array(QUESTIONS.length).fill(0);
+      let radarChart = null;
+      let locked = false;
+
+      function show(screen) {
+        [gateScreen, quizScreen, resultScreen].forEach(function (item) {
+          item.hidden = item !== screen;
+        });
+        window.scrollTo({ top: 0 });
+      }
+
+      function renderQuestion() {
+        progressLabel.textContent = '第 ' + (index + 1) + ' / ' + QUESTIONS.length + ' 题';
+        barFill.style.width = ((index + 1) / QUESTIONS.length * 100) + '%';
+        questionTitle.textContent = QUESTIONS[index];
+
+        optionButtons.forEach(function (button, optionIndex) {
+          const option = OPTIONS[optionIndex];
+          button.textContent = option.label;
+          button.classList.remove('is-picked');
+          button.setAttribute('aria-pressed', String(answers[index] === option.score));
+        });
+        prevBtn.disabled = index === 0;
+      }
+
+      function renderRadar(values, color) {
+        if (!window.echarts) {
+          radarEl.hidden = true;
+          return;
+        }
+        radarEl.hidden = false;
+        if (!radarChart) {
+          radarChart = echarts.init(radarEl, null, { renderer: 'svg' });
+        }
+        radarChart.setOption({
+          animation: false,
+          radar: {
+            center: ['50%', '52%'],
+            radius: '68%',
+            splitNumber: 4,
+            indicator: DIMENSIONS.map(function (item) {
+              return { name: item.name, max: 100 };
+            }),
+            axisName: { color: '#5b5470', fontSize: 13, fontWeight: 500 },
+            axisLine: { lineStyle: { color: 'rgba(142, 201, 255, 0.55)' } },
+            splitLine: { lineStyle: { color: 'rgba(185, 164, 238, 0.45)' } },
+            splitArea: {
+              areaStyle: { color: ['rgba(255, 255, 255, 0.35)', 'rgba(255, 255, 255, 0.12)'] }
+            }
+          },
+          series: [{
+            type: 'radar',
+            symbolSize: 5,
+            data: [{
+              value: values,
+              areaStyle: { color: color + '55' },
+              lineStyle: { color: color, width: 2 },
+              itemStyle: { color: color }
+            }]
+          }]
+        }, true);
+        requestAnimationFrame(function () { radarChart.resize(); });
+      }
+
+      function showResult() {
+        const total = QUESTIONS.length * 4;
+        const score = answers.reduce(function (sum, value) { return sum + value; }, 0);
+        const result = RESULTS.find(function (item) {
+          return score >= item.min && score <= item.max;
+        });
+        const values = DIMENSIONS.map(function (dimension) {
+          const sum = dimension.indexes.reduce(function (acc, i) { return acc + answers[i]; }, 0);
+          return Math.round(sum / (dimension.indexes.length * 4) * 100);
+        });
+        const topName = DIMENSIONS[values.indexOf(Math.max.apply(null, values))].name;
+
+        scoreLabel.textContent = score + ' 分 / ' + total + ' · 最强信号：' + topName;
+        resultTitle.textContent = result.title;
+        resultText.textContent = result.text;
+        show(resultScreen);
+        renderRadar(values, result.color);
+      }
+
+      async function copyResult() {
+        const text = resultTitle.textContent + '｜' + scoreLabel.textContent + '\n' + resultText.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (error) {
+          const area = document.createElement('textarea');
+          area.value = text;
+          area.style.position = 'fixed';
+          area.style.opacity = '0';
+          document.body.appendChild(area);
+          area.select();
+          document.execCommand('copy');
+          area.remove();
+        }
+        const copyBtn = document.getElementById('copy');
+        copyBtn.textContent = '已复制';
+        setTimeout(function () { copyBtn.textContent = '复制结果'; }, 1500);
+      }
+
+      function startQuiz() {
+        index = 0;
+        answers = new Array(QUESTIONS.length).fill(0);
+        locked = false;
+        show(quizScreen);
+        renderQuestion();
+      }
+
+      gateHint.textContent = ACCESS_HINT;
+
+      gateForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // shortcut: client-side check only, readable in source; move to a server if this ever guards private data.
+        if (passwordInput.value.trim() === ACCESS_PASSWORD) {
+          startQuiz();
+          return;
+        }
+        gateHint.textContent = '暗号不对，再试一次';
+        gateHint.style.color = '#d0567c';
+        passwordInput.select();
+      });
+
+      passwordInput.addEventListener('input', function () {
+        gateHint.textContent = ACCESS_HINT;
+        gateHint.style.color = '';
+      });
+
+      optionButtons.forEach(function (button, optionIndex) {
+        button.addEventListener('click', function () {
+          if (locked) return;
+          locked = true;
+          answers[index] = OPTIONS[optionIndex].score;
+          button.classList.add('is-picked');
+          button.setAttribute('aria-pressed', 'true');
+          setTimeout(function () {
+            locked = false;
+            if (index === QUESTIONS.length - 1) {
+              showResult();
+              return;
+            }
+            index += 1;
+            renderQuestion();
+          }, 180);
+        });
+      });
+
+      prevBtn.addEventListener('click', function () {
+        if (locked) return;
+        if (index === 0) return;
+        index -= 1;
+        renderQuestion();
+      });
+
+      document.getElementById('restart').addEventListener('click', startQuiz);
+      document.getElementById('copy').addEventListener('click', copyResult);
+      window.addEventListener('resize', function () {
+        if (radarChart) radarChart.resize();
+      });
+    </script>
+    <script src="assets/background.js?v=theme2"></script>
+  </body>
+</html>

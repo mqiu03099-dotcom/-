@@ -1,0 +1,92 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  background: #fdf8f3;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.bg-aurora {
+  position: fixed;
+  inset: -25%;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    radial-gradient(45% 45% at 22% 24%, rgba(255, 190, 211, 0.65), transparent 70%),
+    radial-gradient(42% 42% at 80% 18%, rgba(187, 219, 255, 0.6), transparent 72%),
+    radial-gradient(48% 48% at 76% 82%, rgba(213, 199, 255, 0.58), transparent 70%),
+    radial-gradient(40% 40% at 14% 82%, rgba(255, 232, 178, 0.5), transparent 72%),
+    linear-gradient(155deg, #fffaf4 0%, #fdf4f9 55%, #f4f8ff 100%);
+  animation: aurora-drift 26s ease-in-out infinite alternate;
+}
+
+[data-theme="sky"] .bg-aurora {
+  background:
+    radial-gradient(48% 48% at 20% 22%, rgba(178, 215, 255, 0.8), transparent 70%),
+    radial-gradient(44% 44% at 82% 18%, rgba(255, 255, 255, 0.95), transparent 72%),
+    radial-gradient(46% 46% at 78% 84%, rgba(198, 227, 255, 0.78), transparent 70%),
+    radial-gradient(42% 42% at 16% 84%, rgba(236, 247, 255, 0.95), transparent 72%),
+    linear-gradient(155deg, #f7fbff 0%, #eaf4ff 55%, #ffffff 100%);
+}
+
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.veil {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(255, 255, 255, 0.34), transparent 62%),
+    linear-gradient(to top, rgba(253, 248, 243, 0.9) 0%, rgba(253, 248, 243, 0) 18%);
+}
+
+[data-theme="sky"] .veil {
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(255, 255, 255, 0.5), transparent 62%),
+    linear-gradient(to top, rgba(244, 250, 255, 0.92) 0%, rgba(244, 250, 255, 0) 18%);
+}
+
+.option[aria-pressed="true"],
+.option[aria-pressed="true"]:hover,
+.option[aria-pressed="true"]:active,
+.option.is-picked,
+.option.is-picked:hover,
+.option.is-picked:active {
+  border-color: #efa9bf;
+  background-color: rgba(253, 231, 238, 0.92);
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(2%, 2%, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+  }
+
+  .bg-aurora {
+    animation: none;
+  }
+}
