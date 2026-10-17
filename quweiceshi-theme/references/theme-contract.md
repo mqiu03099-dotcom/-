@@ -20,7 +20,7 @@
 以 `crush.html` 为模板复制，保持以下结构：
 
 ```html
-<body class="flex min-h-dvh flex-col text-ink" data-theme="<theme>" data-quiz="<slug>" data-shape="heart">
+<body class="flex flex-col text-ink" data-theme="<theme>" data-quiz="<slug>" data-shape="heart">
   <div class="veil" aria-hidden="true"></div>
   <main class="mx-auto flex w-full max-w-[680px] flex-1 flex-col px-5 pb-6 pt-6 sm:px-8 sm:pb-8 sm:pt-8">
     <div class="my-auto w-full py-6 sm:py-10">
@@ -46,7 +46,7 @@
 - `#result` 内的 `#visual`、`#score`、`#resultTitle`、`#resultText`、`#resultExtra`、`#copy`、`#restart`。
 - 测试页内不要加 `href="index.html"`、返回目录或返回首页。
 
-页面高度固定为 `100dvh`，`body` 不滚动；`main` 是唯一纵向滚动容器（`min-height: 0; overflow-y: auto`），底部 footer 固定。切换题目、入口页或结果页时把 `main` 滚回顶部，不要用 `window.scrollTo`。
+页面高度固定为 `100dvh`，`body` 不使用 `min-h-*`；内容超出时由页面滚动，`footer` 紧接 `main` 之后随内容滚动；切换题目、入口页或结果页时用 `window.scrollTo` 回到顶部。
 
 ## 题库配置
 
