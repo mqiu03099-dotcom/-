@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>你的幸运关键词：30 题趣味测试｜趣味测试</title>
+    <meta name="description" content="30 道你的幸运关键词趣味测试题，从轻盈、连接、勇敢、秩序、表达、松弛六个维度完成分析，凭第一感觉作答，免费查看六维雷达结果。">
+    <meta name="keywords" content="你的幸运关键词,你的幸运关键词测试,趣味测试,六维雷达,轻盈,连接,勇敢,秩序,表达,松弛">
+    <meta name="author" content="潇洒哥">
+    <meta name="application-name" content="趣味测试">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#f6fefa">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/lucky-keyword.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/lucky-keyword-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/lucky-keyword-180.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="趣味测试">
+    <meta property="og:title" content="你的幸运关键词：30 题趣味测试｜趣味测试">
+    <meta property="og:description" content="30 道你的幸运关键词趣味测试题，从轻盈、连接、勇敢、秩序、表达、松弛六个维度完成分析，凭第一感觉作答，免费查看六维雷达结果。">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="你的幸运关键词：30 题趣味测试｜趣味测试">
+    <meta name="twitter:description" content="30 道你的幸运关键词趣味测试题，从轻盈、连接、勇敢、秩序、表达、松弛六个维度完成分析，凭第一感觉作答，免费查看六维雷达结果。">
+    <link rel="stylesheet" href="assets/css/site.css?v=catalog2">
+    <script src="assets/vendor/tailwind.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#5b5470',
+              muted: '#8d85a1',
+              blush: '#fbe3eb'
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="flex min-h-dvh flex-col text-ink" data-theme="luckyKeyword" data-quiz="lucky-keyword" data-shape="sparkle">
+    <div class="veil" aria-hidden="true"></div>
+
+    <main class="mx-auto flex w-full max-w-[680px] flex-1 flex-col px-5 pb-6 pt-6 sm:px-8 sm:pb-8 sm:pt-8">
+      <div class="my-auto w-full py-6 sm:py-10">
+        <section id="gate" class="w-full text-center">
+          <p class="text-[11px] tracking-[0.28em] text-muted">KEYWORD · 30 题</p>
+          <h1 class="mt-4 text-[clamp(28px,5.6vw,42px)] font-semibold leading-tight">你最近的好运关键词，<span class='text-[var(--accent-deep)]'>是哪一个</span>？</h1>
+          <p class="mt-3 text-sm text-muted sm:text-base">30 个状态选择，提炼出你当下最需要的那股劲。</p>
+
+          <form id="gateForm" class="mx-auto mt-8 w-full max-w-[420px]">
+            <div class="flex w-full flex-col gap-3 sm:flex-row">
+              <label for="password" class="sr-only">访问暗号</label>
+              <input id="password" type="password" inputmode="numeric" maxlength="4" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" required placeholder="请输入暗号" class="h-14 w-full min-w-0 rounded-full border-2 border-white/70 bg-white/50 px-5 text-base text-ink backdrop-blur-md transition-colors placeholder:text-muted/70 focus:border-[var(--accent)] focus:bg-white/75 focus:outline-none sm:h-12 sm:flex-1">
+              <button type="submit" class="h-14 w-full shrink-0 rounded-full border-2 border-white/60 bg-[var(--accent-soft)] px-7 text-[15px] font-semibold text-[var(--accent-deep)] backdrop-blur-md transition-colors hover:bg-[var(--accent)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] sm:h-12 sm:w-auto">开始测试</button>
+            </div>
+            <p id="gateHint" class="mt-3 min-h-5 text-[13px] leading-5 text-muted" aria-live="polite">需要输入暗号才能进入开始测试</p>
+          </form>
+        </section>
+
+        <section id="quiz" class="w-full" hidden>
+          <div class="flex items-center justify-between text-[13px] text-muted">
+            <span id="progress">第 1 / 30 题</span>
+            <span class="hidden sm:inline">凭第一感觉选择</span>
+          </div>
+          <div class="mt-2.5 h-2 overflow-hidden rounded-full bg-[#efe9f2]">
+            <span id="barFill" class="block h-full w-0 rounded-full bg-[var(--accent)] transition-[width] duration-300"></span>
+          </div>
+          <h2 id="question" class="mt-7 min-h-[3.2em] text-[clamp(19px,3.6vw,24px)] font-medium leading-relaxed"></h2>
+          <div class="mt-5 grid gap-2.5">
+            <button type="button" data-option="0" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[var(--accent)] hover:bg-white/75 active:border-[var(--accent)] active:bg-[var(--accent-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] aria-pressed:border-[var(--accent)] aria-pressed:bg-[var(--accent-soft)]"></button>
+            <button type="button" data-option="1" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[var(--accent)] hover:bg-white/75 active:border-[var(--accent)] active:bg-[var(--accent-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] aria-pressed:border-[var(--accent)] aria-pressed:bg-[var(--accent-soft)]"></button>
+            <button type="button" data-option="2" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[var(--accent)] hover:bg-white/75 active:border-[var(--accent)] active:bg-[var(--accent-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] aria-pressed:border-[var(--accent)] aria-pressed:bg-[var(--accent-soft)]"></button>
+            <button type="button" data-option="3" class="option flex min-h-[56px] w-full items-center justify-between gap-3 rounded-[22px] border-2 border-white/60 bg-white/45 px-5 py-4 text-left text-base leading-6 backdrop-blur-md transition-colors hover:border-[var(--accent)] hover:bg-white/75 active:border-[var(--accent)] active:bg-[var(--accent-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] aria-pressed:border-[var(--accent)] aria-pressed:bg-[var(--accent-soft)]"></button>
+          </div>
+          <div class="mt-3">
+            <button id="prev" type="button" class="inline-flex items-center gap-1.5 py-2 text-xs font-bold text-muted transition-colors hover:text-ink disabled:opacity-0">
+              <svg class="h-3 w-3 rotate-180 text-[var(--accent)]" viewBox="0 0 1024 1024" aria-hidden="true">
+                <path fill="currentColor" d="M315.2 912.4c-18 0-36-7.6-48.6-22.4-23-26.8-19.9-67.2 6.9-90.2l336-288-336-288c-26.8-23-29.9-63.4-6.9-90.2 23-26.8 63.4-29.9 90.2-6.9l392.7 336.6c14.2 12.2 22.3 29.9 22.3 48.6s-8.2 36.4-22.3 48.6L356.8 897c-12 10.3-26.9 15.4-41.6 15.4z"/>
+              </svg>
+              上一题
+            </button>
+          </div>
+        </section>
+
+        <section id="result" class="w-full text-center" hidden>
+          <div id="visual" class="w-full"></div>
+          <p id="score" class="mt-4 text-[13px] tracking-wide text-muted"></p>
+          <h2 id="resultTitle" class="mt-2 text-[clamp(24px,4.6vw,30px)] font-semibold"></h2>
+          <p id="resultText" class="mx-auto mt-4 max-w-[560px] text-left text-[14px] leading-7 text-[#5e5670] sm:text-[15px]"></p>
+          <p id="resultExtra" class="mx-auto mt-3 max-w-[560px] text-left text-[13px] leading-6 text-muted"></p>
+          <div class="mt-6 flex gap-2.5">
+            <button id="copy" type="button" class="h-12 flex-1 rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent-deep)] transition-colors hover:bg-[var(--accent)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]">复制结果</button>
+            <button id="restart" type="button" class="h-12 flex-1 rounded-full bg-white/60 text-sm font-semibold text-ink transition-colors hover:bg-white/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]">再测一次</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="w-full px-5 pb-[calc(14px+env(safe-area-inset-bottom))] pt-2 text-center text-xs text-muted">
+      <p class="mx-auto max-w-[620px] leading-5">本测试仅供娱乐与自我参考，不构成心理评估或情感建议。请勿将测试结果作为现实关系决策的唯一依据。</p>
+    </footer>
+
+    <script src="assets/js/quizzes.js?v=catalog1"></script>
+    <script src="assets/vendor/echarts.min.js"></script>
+    <script src="assets/js/quiz-engine.js?v=catalog2"></script>
+    <script src="assets/js/background.js?v=catalog1"></script>
+  </body>
+</html>

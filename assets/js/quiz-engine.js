@@ -4,6 +4,11 @@
 
   function $(id) { return document.getElementById(id); }
 
+  function scrollTop() {
+    var mainEl = document.querySelector('main');
+    if (mainEl) mainEl.scrollTo({ top: 0 });
+  }
+
   var gateScreen = $('gate');
   var quizScreen = $('quiz');
   var resultScreen = $('result');
@@ -45,6 +50,7 @@
     [gateScreen, quizScreen, resultScreen].forEach(function (item) {
       item.hidden = item !== screen;
     });
+    scrollTop();
   }
 
   function renderQuestion() {
@@ -63,6 +69,7 @@
     });
     prevBtn.disabled = index === 0;
     if (optionsBox) optionsBox.classList.add('is-resetting');
+    scrollTop();
   }
 
   function percentOf(sum, count) {

@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="TA 喜欢我吗？30 题暗恋测试｜爱情趣味测试">
     <meta name="twitter:description" content="用 30 个日常细节测试 TA 是否喜欢你，从主动联系、回复速度、分享欲、特殊对待、身体距离和未来暗示六个维度生成心动雷达图，免费在线测试，凭第一感觉作答即可查看结果。">
-    <link rel="stylesheet" href="assets/css/site.css?v=buttons1">
+    <link rel="stylesheet" href="assets/css/site.css?v=catalog2">
     <script src="assets/vendor/tailwind.js"></script>
     <script>
       tailwind.config = {
@@ -119,6 +119,7 @@
       const scoreLabel = document.getElementById('score');
       const resultTitle = document.getElementById('resultTitle');
       const resultText = document.getElementById('resultText');
+      const mainEl = document.querySelector('main');
       const ORDERS = QUESTIONS.map(function (_, questionIndex) {
         return [0, 1, 2, 3].map(function (optionIndex) {
           return (optionIndex + questionIndex) % 4;
@@ -134,7 +135,7 @@
         [gateScreen, quizScreen, resultScreen].forEach(function (item) {
           item.hidden = item !== screen;
         });
-        window.scrollTo({ top: 0 });
+        if (mainEl) mainEl.scrollTo({ top: 0 });
       }
 
       function renderQuestion() {
@@ -151,6 +152,7 @@
         });
         prevBtn.disabled = index === 0;
         if (optionsBox) optionsBox.classList.add('is-resetting');
+        if (mainEl) mainEl.scrollTo({ top: 0 });
       }
 
       function renderRadar(values, color) {
@@ -301,6 +303,6 @@
         if (radarChart) radarChart.resize();
       });
     </script>
-    <script src="assets/js/background.js?v=theme6"></script>
+    <script src="assets/js/background.js?v=catalog1"></script>
   </body>
 </html>
