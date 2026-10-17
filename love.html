@@ -119,7 +119,6 @@
       const scoreLabel = document.getElementById('score');
       const resultTitle = document.getElementById('resultTitle');
       const resultText = document.getElementById('resultText');
-      const mainEl = document.querySelector('main');
       const ORDERS = QUESTIONS.map(function (_, questionIndex) {
         return [0, 1, 2, 3].map(function (optionIndex) {
           return (optionIndex + questionIndex) % 4;
@@ -135,7 +134,7 @@
         [gateScreen, quizScreen, resultScreen].forEach(function (item) {
           item.hidden = item !== screen;
         });
-        if (mainEl) mainEl.scrollTo({ top: 0 });
+        document.body.scrollTo({ top: 0 });
       }
 
       function renderQuestion() {
@@ -152,7 +151,7 @@
         });
         prevBtn.disabled = index === 0;
         if (optionsBox) optionsBox.classList.add('is-resetting');
-        if (mainEl) mainEl.scrollTo({ top: 0 });
+        document.body.scrollTo({ top: 0 });
       }
 
       function renderRadar(values, color) {

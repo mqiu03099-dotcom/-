@@ -2,6 +2,7 @@ html {
   -webkit-text-size-adjust: 100%;
   background: #fdf8f3;
   height: 100%;
+  overflow: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -19,17 +20,15 @@ body {
   height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
+  overscroll-behavior-y: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
-}
-
-body > main {
-  min-height: 0;
 }
 
 body > main.flex-1 {
@@ -38,6 +37,7 @@ body > main.flex-1 {
 
 body > footer {
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 [data-theme="sky"] > main {

@@ -5,7 +5,7 @@
   function $(id) { return document.getElementById(id); }
 
   function scrollTop() {
-    window.scrollTo({ top: 0 });
+    document.body.scrollTo({ top: 0 });
   }
 
   var gateScreen = $('gate');
