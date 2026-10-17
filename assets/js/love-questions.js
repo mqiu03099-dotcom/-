@@ -1,4 +1,4 @@
-const ACCESS_PASSWORD = '7700';
+const ACCESS_PASSWORD = '1174';
 const ACCESS_HINT = '需要输入暗号才能进入开始测试';
 
 const QUESTIONS = [

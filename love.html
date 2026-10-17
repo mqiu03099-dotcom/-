@@ -3,10 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>TA 喜欢我吗？30 题暗恋测试｜爱情趣味测试</title>
+    <meta name="description" content="用 30 个日常细节测试 TA 是否喜欢你，从主动联系、回复速度、分享欲、特殊对待、身体距离和未来暗示六个维度生成心动雷达图，免费在线测试，凭第一感觉作答即可查看结果。">
+    <meta name="keywords" content="TA喜欢我吗,暗恋测试,爱情测试,恋爱测试,30题测试">
+    <meta name="author" content="潇洒哥">
+    <meta name="application-name" content="爱情趣味测试">
+    <meta name="robots" content="index,follow">
     <meta name="theme-color" content="#fdf8f3">
-    <title>趣味测试｜TA 喜欢我吗</title>
-    <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="assets/site.css?v=theme2">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/love.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/love-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/love-180.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="爱情趣味测试">
+    <meta property="og:title" content="TA 喜欢我吗？30 题暗恋测试｜爱情趣味测试">
+    <meta property="og:description" content="用 30 个日常细节测试 TA 是否喜欢你，从主动联系、回复速度、分享欲、特殊对待、身体距离和未来暗示六个维度生成心动雷达图，免费在线测试，凭第一感觉作答即可查看结果。">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TA 喜欢我吗？30 题暗恋测试｜爱情趣味测试">
+    <meta name="twitter:description" content="用 30 个日常细节测试 TA 是否喜欢你，从主动联系、回复速度、分享欲、特殊对待、身体距离和未来暗示六个维度生成心动雷达图，免费在线测试，凭第一感觉作答即可查看结果。">
+    <link rel="stylesheet" href="assets/css/site.css?v=buttons1">
     <script src="assets/vendor/tailwind.js"></script>
     <script>
       tailwind.config = {
@@ -81,13 +97,11 @@
     </main>
 
     <footer class="w-full px-5 pb-[calc(14px+env(safe-area-inset-bottom))] pt-2 text-center text-xs text-muted">
-      <span>由潇洒哥提供技术支持</span>
-      <span class="mx-2 inline-block h-1 w-1 rounded-full bg-[#c98aa0] align-middle" aria-hidden="true"></span>
-      <a class="underline decoration-dotted underline-offset-4 transition-colors hover:text-ink" href="mailto:2939561428@qq.com">2939561428@qq.com</a>
+      <p class="mx-auto max-w-[620px] leading-5">本测试仅供娱乐与自我参考，不构成心理评估或情感建议。请勿将测试结果作为现实关系决策的唯一依据。</p>
     </footer>
 
     <script src="assets/vendor/echarts.min.js"></script>
-    <script src="assets/love-questions.js?v=7700"></script>
+    <script src="assets/js/love-questions.js?v=pass1"></script>
     <script>
       const gateScreen = document.getElementById('gate');
       const quizScreen = document.getElementById('quiz');
@@ -99,11 +113,17 @@
       const barFill = document.getElementById('barFill');
       const questionTitle = document.getElementById('question');
       const optionButtons = Array.from(document.querySelectorAll('[data-option]'));
+      const optionsBox = optionButtons[0] && optionButtons[0].parentElement;
       const prevBtn = document.getElementById('prev');
       const radarEl = document.getElementById('radar');
       const scoreLabel = document.getElementById('score');
       const resultTitle = document.getElementById('resultTitle');
       const resultText = document.getElementById('resultText');
+      const ORDERS = QUESTIONS.map(function (_, questionIndex) {
+        return [0, 1, 2, 3].map(function (optionIndex) {
+          return (optionIndex + questionIndex) % 4;
+        });
+      });
 
       let index = 0;
       let answers = new Array(QUESTIONS.length).fill(0);
@@ -122,13 +142,15 @@
         barFill.style.width = ((index + 1) / QUESTIONS.length * 100) + '%';
         questionTitle.textContent = QUESTIONS[index];
 
+        const order = ORDERS[index];
         optionButtons.forEach(function (button, optionIndex) {
-          const option = OPTIONS[optionIndex];
+          const option = OPTIONS[order[optionIndex]];
           button.textContent = option.label;
           button.classList.remove('is-picked');
           button.setAttribute('aria-pressed', String(answers[index] === option.score));
         });
         prevBtn.disabled = index === 0;
+        if (optionsBox) optionsBox.classList.add('is-resetting');
       }
 
       function renderRadar(values, color) {
@@ -190,7 +212,7 @@
       }
 
       async function copyResult() {
-        const text = resultTitle.textContent + '｜' + scoreLabel.textContent + '\n' + resultText.textContent;
+        const text = resultTitle.textContent + '｜' + scoreLabel.textContent + '\n' + resultText.textContent + '\n\n—— 本测试仅供娱乐与自我参考，不构成专业心理或情感建议。';
         try {
           await navigator.clipboard.writeText(text);
         } catch (error) {
@@ -216,6 +238,10 @@
         renderQuestion();
       }
 
+      function clearReset() {
+        if (optionsBox) optionsBox.classList.remove('is-resetting');
+      }
+
       gateHint.textContent = ACCESS_HINT;
 
       gateForm.addEventListener('submit', function (event) {
@@ -239,7 +265,9 @@
         button.addEventListener('click', function () {
           if (locked) return;
           locked = true;
-          answers[index] = OPTIONS[optionIndex].score;
+          answers[index] = OPTIONS[ORDERS[index][optionIndex]].score;
+          button.classList.add('is-tapped');
+          setTimeout(function () { button.classList.remove('is-tapped'); }, 200);
           button.classList.add('is-picked');
           button.setAttribute('aria-pressed', 'true');
           setTimeout(function () {
@@ -250,7 +278,7 @@
             }
             index += 1;
             renderQuestion();
-          }, 180);
+          }, 260);
         });
       });
 
@@ -263,10 +291,16 @@
 
       document.getElementById('restart').addEventListener('click', startQuiz);
       document.getElementById('copy').addEventListener('click', copyResult);
+      document.addEventListener('pointermove', function (event) {
+        if (event.pointerType !== 'touch') clearReset();
+      }, { passive: true });
+      document.addEventListener('pointerdown', function (event) {
+        if (event.pointerType !== 'touch') clearReset();
+      }, { passive: true });
       window.addEventListener('resize', function () {
         if (radarChart) radarChart.resize();
       });
     </script>
-    <script src="assets/background.js?v=theme2"></script>
+    <script src="assets/js/background.js?v=theme6"></script>
   </body>
 </html>

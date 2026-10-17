@@ -62,16 +62,6 @@ body {
     linear-gradient(to top, rgba(244, 250, 255, 0.92) 0%, rgba(244, 250, 255, 0) 18%);
 }
 
-.option[aria-pressed="true"],
-.option[aria-pressed="true"]:hover,
-.option[aria-pressed="true"]:active,
-.option.is-picked,
-.option.is-picked:hover,
-.option.is-picked:active {
-  border-color: #efa9bf;
-  background-color: rgba(253, 231, 238, 0.92);
-}
-
 @keyframes aurora-drift {
   0% {
     transform: translate3d(-2%, -1%, 0) scale(1);
@@ -89,6 +79,10 @@ body {
   .bg-aurora {
     animation: none;
   }
+
+  .option.option.is-tapped {
+    animation: none !important;
+  }
 }
 
 
@@ -103,10 +97,25 @@ body {
   --glow-1: rgba(255, 190, 211, 0.55);
   --glow-2: rgba(187, 219, 255, 0.5);
   --particles: #f4a3bd,#c2aff0,#8fc9f7,#9adfc6,#f2d38b;
+  --btn-primary-bg: var(--accent);
+  --btn-primary-fg: #2f2b3a;
+  --btn-primary-border: var(--accent);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.55);
+  --btn-secondary-fg: var(--accent-deep);
+  --btn-secondary-border: var(--accent-line);
+}
+
+[data-theme="macaron"] {
+  --btn-primary-bg: #bfe9dc;
+  --btn-primary-fg: #25443c;
+  --btn-primary-border: #a9d9cd;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.55);
+  --btn-secondary-fg: #5b4b78;
+  --btn-secondary-border: #d8c8f0;
 }
 
 [data-theme="sky"] {
-  --particles: #5f9ed6,#7db7e8,#a4cff0,#c6e2f8;
+  --particles: #5f9ed6,#7db7e8,#a4cff0,#c6e2f8,#eef7ff;
 }
 
 [data-theme="crush"] {
@@ -118,7 +127,7 @@ body {
   --bg-2: #ffe9f0;
   --glow-1: rgba(246, 190, 210, 0.62);
   --glow-2: rgba(255, 226, 196, 0.58);
-  --particles: #eaa0b6,#f6cdb4,#e3c6ee;
+  --particles: #eaa0b6,#f6cdb4,#e3c6ee,#f3b8c8,#f7e0c8;
 }
 
 [data-theme="match"] {
@@ -130,7 +139,7 @@ body {
   --bg-2: #e8f4ff;
   --glow-1: rgba(178, 215, 255, 0.65);
   --glow-2: rgba(196, 240, 225, 0.55);
-  --particles: #8fc4eb,#b7ddf5,#a8e3cf;
+  --particles: #8fc4eb,#b7ddf5,#a8e3cf,#cfe9f9,#f3c9d8;
 }
 
 [data-theme="flirt"] {
@@ -142,7 +151,7 @@ body {
   --bg-2: #ffeadf;
   --glow-1: rgba(255, 190, 165, 0.6);
   --glow-2: rgba(255, 226, 170, 0.55);
-  --particles: #f2a288,#f7c9a8,#f4b8c8;
+  --particles: #f2a288,#f7c9a8,#f4b8c8,#fbdcc0,#f6b0a0;
 }
 
 [data-theme="ex"] {
@@ -154,7 +163,7 @@ body {
   --bg-2: #ecebf4;
   --glow-1: rgba(190, 182, 212, 0.5);
   --glow-2: rgba(190, 204, 224, 0.5);
-  --particles: #a9a2c4,#c2c9dc,#b7b0cc;
+  --particles: #a9a2c4,#c2c9dc,#b7b0cc,#ccc4dc,#dbe3ee;
 }
 
 [data-theme="ideal"] {
@@ -166,7 +175,7 @@ body {
   --bg-2: #eef5fc;
   --glow-1: rgba(185, 216, 240, 0.6);
   --glow-2: rgba(226, 236, 248, 0.7);
-  --particles: #9fc3e2,#c8ddf0,#b9cfe8;
+  --particles: #9fc3e2,#c8ddf0,#b9cfe8,#d9e9f7,#e9d9ef;
 }
 
 [data-theme="brain"] {
@@ -178,7 +187,7 @@ body {
   --bg-2: #ffe8e6;
   --glow-1: rgba(248, 170, 188, 0.6);
   --glow-2: rgba(255, 220, 190, 0.55);
-  --particles: #ee90a8,#f5bcc8,#f3c9a8;
+  --particles: #ee90a8,#f5bcc8,#f3c9a8,#f7d7de,#f6dcb8;
 }
 
 [data-theme="talk"] {
@@ -190,7 +199,7 @@ body {
   --bg-2: #e7f7f2;
   --glow-1: rgba(150, 222, 205, 0.55);
   --glow-2: rgba(176, 220, 240, 0.5);
-  --particles: #7ccbb8,#a7dfd2,#9fcfe6;
+  --particles: #7ccbb8,#a7dfd2,#9fcfe6,#c5ebe3,#bfe2f2;
 }
 
 [data-theme="attach"] {
@@ -202,7 +211,7 @@ body {
   --bg-2: #f7ecdd;
   --glow-1: rgba(235, 210, 180, 0.55);
   --glow-2: rgba(240, 225, 205, 0.6);
-  --particles: #d1b089,#e4c9a8,#e8d6bd;
+  --particles: #d1b089,#e4c9a8,#e8d6bd,#ddbf9b,#f0e2cd;
 }
 
 [data-theme="give"] {
@@ -214,7 +223,7 @@ body {
   --bg-2: #ffefdc;
   --glow-1: rgba(247, 205, 160, 0.6);
   --glow-2: rgba(255, 225, 175, 0.55);
-  --particles: #eeae6d,#f5c795,#f0b98a;
+  --particles: #eeae6d,#f5c795,#f0b98a,#f8d9b5,#e8c07a;
 }
 
 [data-theme="date"] {
@@ -226,7 +235,7 @@ body {
   --bg-2: #f2f5dd;
   --glow-1: rgba(230, 232, 160, 0.55);
   --glow-2: rgba(205, 232, 180, 0.55);
-  --particles: #c6c97a,#dbe4a2,#bfd9a0;
+  --particles: #c6c97a,#dbe4a2,#bfd9a0,#e7e8b0,#d3e6b2;
 }
 
 [data-theme="fight"] {
@@ -238,7 +247,7 @@ body {
   --bg-2: #eceff6;
   --glow-1: rgba(180, 195, 218, 0.5);
   --glow-2: rgba(205, 198, 224, 0.5);
-  --particles: #9aaec9,#b8c4d8,#c4b9d6;
+  --particles: #9aaec9,#b8c4d8,#c4b9d6,#d3dbe8,#d9d0e6;
 }
 
 [data-theme="depend"] {
@@ -250,7 +259,7 @@ body {
   --bg-2: #fbeaf2;
   --glow-1: rgba(244, 190, 212, 0.6);
   --glow-2: rgba(220, 198, 240, 0.55);
-  --particles: #e59bbb,#efc3d4,#d9bce8;
+  --particles: #e59bbb,#efc3d4,#d9bce8,#f3d3df,#e4cdf0;
 }
 
 [data-theme]:not([data-theme="macaron"]):not([data-theme="sky"]) .bg-aurora {
@@ -396,4 +405,244 @@ body {
     width: 22px;
     height: 22px;
   }
+}
+
+/* 交互层只做位移和透明度过渡，避免玻璃背景反复重绘闪烁 */
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.option.option {
+  position: relative;
+  isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.6);
+  transition: none;
+  touch-action: manipulation;
+}
+
+@keyframes option-tap {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(0.975);
+  }
+}
+
+.option.option.is-tapped {
+  animation: option-tap 180ms cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.option.option::before,
+.option.option::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.option.option::before {
+  background: #fff;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.option.option::after {
+  background: var(--accent-soft);
+  opacity: 0;
+}
+
+.option.option:hover,
+.option.option:active,
+.option.option.is-picked,
+.option.option[aria-pressed="true"] {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.option.option:active,
+.option.option.is-picked,
+.option.option[aria-pressed="true"] {
+  border-color: var(--accent);
+}
+
+.option.option:active::after,
+.option.option.is-picked::after,
+.option.option[aria-pressed="true"]::after {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .option.option:hover {
+    border-color: var(--accent);
+  }
+
+  .option.option:hover::before {
+    opacity: 0.26;
+  }
+}
+
+@media (hover: none) {
+  .option.option:not(.is-picked):not([aria-pressed="true"]):hover,
+  .option.option:not(.is-picked):not([aria-pressed="true"]):active {
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .option.option:not(.is-picked):not([aria-pressed="true"]):active::after {
+    opacity: 0;
+  }
+}
+
+.is-resetting .option.option:not(.is-picked):not([aria-pressed="true"]):hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.is-resetting .option.option:hover::before {
+  opacity: 0;
+  transition: none;
+}
+
+main a.backdrop-blur-xl {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--card);
+  transition: none;
+}
+
+main a.backdrop-blur-xl::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+
+@media (hover: hover) {
+  main a.backdrop-blur-xl:hover {
+    background-color: var(--card);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+
+  main a.backdrop-blur-xl:hover::before {
+    opacity: 0.28;
+  }
+}
+
+main a.backdrop-blur-xl:active::before {
+  opacity: 0.4;
+  transition: none;
+}
+
+#gateForm input,
+#gateForm button,
+#prev,
+#copy,
+#restart {
+  touch-action: manipulation;
+}
+
+#gateForm input {
+  height: 48px;
+  transition: none;
+}
+
+#gateForm button,
+#copy,
+#restart {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 90ms ease;
+}
+
+#gateForm button,
+#copy {
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+  color: var(--btn-primary-fg);
+}
+
+#restart {
+  background-color: var(--btn-secondary-bg);
+  border-color: var(--btn-secondary-border);
+  color: var(--btn-secondary-fg);
+}
+
+#gateForm button::after,
+#copy::after,
+#restart::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+#gateForm button:hover::after,
+#copy:hover::after,
+#restart:hover::after {
+  opacity: 0.08;
+}
+
+#gateForm button:active::after,
+#copy:active::after,
+#restart:active::after {
+  opacity: 0.16;
+}
+
+#gateForm button:active,
+#copy:active,
+#restart:active {
+  transform: translateY(1px);
+}
+
+#gateForm button:focus-visible,
+#copy:focus-visible,
+#restart:focus-visible {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: 2px;
+}
+
+#gateForm button:focus-visible,
+#copy:focus-visible {
+  outline-color: var(--btn-primary-border);
+}
+
+#restart:focus-visible {
+  outline-color: var(--btn-secondary-border);
+}
+
+#prev {
+  transition: color 120ms ease, transform 90ms ease;
+}
+
+#prev:active {
+  transform: translateY(1px);
 }

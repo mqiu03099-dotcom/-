@@ -1,0 +1,4 @@
+interface:
+  display_name: "趣味测试主题生成"
+  short_description: "按现有项目风格生成一个完整的主题测试页面"
+  default_prompt: "Use $quweiceshi-theme to add a complete themed quiz page in this project."
